@@ -66,14 +66,16 @@ export const Tictactoe = () => {
             titleRef.current.innerHTML = `congratulations: <img src=${circle_icon}`;
         }
     }
-    const reset =() =>{
+    
+    const reset = () => {
         setLock(false);
-        data = ["","","","","","","","",""];
+        data = ["", "", "", "", "", "", "", "", ""];
         titleRef.current.innerHTML = `Play again Now`;
-        box_array.map((e)=>{
+        box_array.forEach((e) => {
             e.current.innerHTML = "";
-        })
-    }
+        });
+    };
+    
     return (
     
     <div className='container'>
