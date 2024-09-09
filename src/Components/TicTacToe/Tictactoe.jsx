@@ -34,9 +34,11 @@ export const Tictactoe = () => {
         newBoard[index] = isXNext ? 'x' : 'o';
         setBoard(newBoard);
         setIsXNext(!isXNext);
-        const winner = calculateWinner(newBoard);
-        if (winner) {
-            setWinner(winner);
+
+        // Rename the local variable to avoid conflict with the state variable
+        const calculatedWinner = calculateWinner(newBoard);
+        if (calculatedWinner) {
+            setWinner(calculatedWinner);
         }
     };
 
